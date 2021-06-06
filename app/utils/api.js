@@ -2,6 +2,14 @@ const id = process.env.CLIENT_ID
 const clientSecret = process.env.CLIENT_SECRET
 const params = `?client_id=${id}&client_secret=${clientSecret}`
 
+function getErrorMsg (message, username) {
+  if (message === 'Not Found') {
+    return `${username} doesn't exist`
+  }
+
+  return message
+}
+
 function getProfile (username) {
   return fetch(`https://api.github.com/users/${username}${params}`)
     .then((response) => response.json())
