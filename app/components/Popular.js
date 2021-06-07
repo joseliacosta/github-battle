@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { fetchPopularRepos } from "../utils/api";
 import Card from "./Card"
 import Loading from "./Loading";
+import Tooltip from "./Tooltip";
 
 const LanguagesNav = ({ selected, onUpdateLanguage }) => {
   const languages = ["All", "JavaScript", "Ruby", "Java", "CSS", "Python"];
@@ -63,8 +64,11 @@ function ReposGrid ({ repos }) {
                   {forks.toLocaleString()} forks
                 </li>
                 <li>
-                  <FaExclamationTriangle color='rgb(241, 138, 147)' size={22} />
-                  {open_issues.toLocaleString()} open
+                  <Tooltip text="Open Issues">
+
+                    <FaExclamationTriangle color='rgb(241, 138, 147)' size={22} />
+                    {open_issues.toLocaleString()} open
+                  </Tooltip>
                 </li>
               </ul>
             </Card>
