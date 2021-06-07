@@ -4,8 +4,6 @@ import { FaCompass, FaBriefcase, FaUsers, FaUserFriends, FaCode, FaUser } from '
 import { battle } from '../utils/api'
 import Card from './Card'
 
-import PropTypes from 'prop-types'
-
 function ProfileList ({ profile }) {
   return (
     <ul className='card-list'>
